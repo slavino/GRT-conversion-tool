@@ -7,16 +7,16 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 
 import java.util.List;
 
-public class GRTLoadGunLeakageGroupLeakage {
+public class GRTProjectileProjectilefile {
 
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "var")
-    List<GRTLoadGunLeakageGroupLeakageVar> grtLoadGunLeakageGroupLeakageVars;
+    List<GRTProjectileProjectilefileVar> grtProjectileProjectilefileVars;
 
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
-                .append("grtLoadGunLeakageGroupLeakageVars", grtLoadGunLeakageGroupLeakageVars)
+                .append("grtProjectileProjectilefileVars", grtProjectileProjectilefileVars)
                 .toString();
     }
 
