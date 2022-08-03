@@ -5,6 +5,7 @@ import org.apache.logging.log4j.Logger;
 import org.ini4j.Ini;
 import org.ini4j.Profile;
 import org.junit.jupiter.api.Test;
+import sk.digitalh.grt.toolkit.dto.ql.QLDatFile;
 
 import java.io.File;
 import java.io.IOException;
@@ -41,13 +42,9 @@ public class QuickLoadTest {
             Ini quickloadAmmoFile = new Ini();
             try {
                 quickloadAmmoFile.load(file);
-                Ini.Section startup = quickloadAmmoFile.get("startup");
-                Ini.Section metrics = quickloadAmmoFile.get("metrics");
-                Ini.Section chargedata = quickloadAmmoFile.get("chargedata");
 
-                LOGGER.debug(startup);
-                LOGGER.debug(metrics);
-                LOGGER.debug(chargedata);
+                QLDatFile qlDatFile = new QLDatFile(quickloadAmmoFile);
+                LOGGER.debug(qlDatFile);
 
             } catch (IOException ioEx) {
                 LOGGER.error(ioEx);
