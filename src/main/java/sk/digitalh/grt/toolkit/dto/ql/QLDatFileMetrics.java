@@ -120,7 +120,58 @@ public class QLDatFileMetrics {
     }
 
     public QLDatFileMetrics(Ini.Section metrics) {
-
+        this.pattyp = metrics.get("pattyp");
+        this.laflen = Double.parseDouble(metrics.get("laflen"));
+        this.patlan = Double.parseDouble(metrics.get("patlan"));
+        this.sdepth = Double.parseDouble(metrics.get("sdepth"));
+        this.hullen = Double.parseDouble(metrics.get("hullen"));
+        this.kalzug = Double.parseDouble(metrics.get("kalzug"));
+        this.sebert = Double.parseDouble(metrics.get("sebert"));
+        this.volful = Double.parseDouble(metrics.get("volful"));
+        this.wirkqu = Double.parseDouble(metrics.get("wirkqu"));
+        this.wirktr = Double.parseDouble(metrics.get("wirktr"));
+        this.brennr = Double.parseDouble(metrics.get("brennr"));
+        this.gesweg = Double.parseDouble(metrics.get("gesweg"));
+        this.maxzul = Double.parseDouble(metrics.get("maxzul"));
+        this.pmetho = metrics.get("pmetho");
+        this.bultyp = metrics.get("bultyp");
+        this.bulgew = Double.parseDouble(metrics.get("bulgew"));
+        this.bullen = Double.parseDouble(metrics.get("bullen"));
+        this.conlen = Double.parseDouble(metrics.get("conlen"));
+        this.condia = Double.parseDouble(metrics.get("condia"));
+        this.condid = Double.parseDouble(metrics.get("condid"));
+        this.ausinn = Double.parseDouble(metrics.get("ausinn"));
+        this.buldia = Double.parseDouble(metrics.get("buldia"));
+        this.c1icao = Double.parseDouble(metrics.get("c1icao"));
+        this.mulbc1 = Double.parseDouble(metrics.get("mulbc1"));
+        this.trvel1 = Double.parseDouble(metrics.get("trvel1"));
+        this.mulbc2 = Double.parseDouble(metrics.get("mulbc2"));
+        this.trvel2 = Double.parseDouble(metrics.get("trvel2"));
+        this.mulbc3 = Double.parseDouble(metrics.get("mulbc3"));
+        this.trvel3 = Double.parseDouble(metrics.get("trvel3"));
+        this.mulbc4 = Double.parseDouble(metrics.get("mulbc4"));
+        this.trvel4 = Double.parseDouble(metrics.get("trvel4"));
+        this.mulbc5 = Double.parseDouble(metrics.get("mulbc5"));
+        this.friyes = Double.parseDouble(metrics.get("friyes"));
+        this.fripas = Double.parseDouble(metrics.get("fripas"));
+        this.molyco = Double.parseDouble(metrics.get("molyco"));
+        this.molydo = Double.parseDouble(metrics.get("molydo"));
+        this.l1_in = Double.parseDouble(metrics.get("l1_in"));
+        this.l2_in = Double.parseDouble(metrics.get("l2_in"));
+        this.Ri_in = Double.parseDouble(metrics.get("Ri_in"));
+        this.R1_in = Double.parseDouble(metrics.get("R1_in"));
+        this.P1_in = Double.parseDouble(metrics.get("P1_in"));
+        this.P2_in = Double.parseDouble(metrics.get("P2_in"));
+        this.H1_in = Double.parseDouble(metrics.get("H1_in"));
+        this.H2_in = Double.parseDouble(metrics.get("H2_in"));
+        this.Shape = Double.parseDouble(metrics.get("Shape"));
+        this.caswht = Double.parseDouble(metrics.get("caswht"));
+        this.ZD_in = Double.parseDouble(metrics.get("ZD_in"));
+        this.FD_in = Double.parseDouble(metrics.get("FD_in"));
+        this.FB_in = Double.parseDouble(metrics.get("FB_in"));
+        this.ZZ_no = Double.parseDouble(metrics.get("ZZ_no"));
+        this.ZB_in = Double.parseDouble(metrics.get("ZB_in"));
+        this.Polyg = Double.parseDouble(metrics.get("Polyg"));
     }
 
 
