@@ -48,16 +48,16 @@ public class QLDatFileChargeData {
     private Double bulkdn;// = .986
     private Double powtmp;// = 21
     private String primer;// =
-    private String PrimerLot;// =
-    private String BulletLot;// =
-    private String PowderLot;// =
-    private String CaseMfg;// =
-    private String MuzzleVel_meas;// =
-    private String MVel_meas_std;// =
-    private String MVel_meas_unit;// =
-    private String Press_meas;// =
-    private String Press_meas_std;// =
-    private String Press_meas_unit; //=
+    private String primerLot;// =
+    private String bulletLot;// =
+    private String powderLot;// =
+    private String caseMfg;// =
+    private String muzzleVel_meas;// =
+    private String mVel_meas_std;// =
+    private String mVel_meas_unit;// =
+    private String press_meas;// =
+    private String press_meas_std;// =
+    private String press_meas_unit; //=
 
     public QLDatFileChargeData() {
         super();
@@ -78,16 +78,16 @@ public class QLDatFileChargeData {
         this.bulkdn = Double.parseDouble(chargedata.get("bulkdn"));
         this.powtmp = Double.parseDouble(chargedata.get("powtmp"));
         this.primer = (chargedata.get("primer"));
-        this.PrimerLot = (chargedata.get("PrimerLot"));
-        this.BulletLot = (chargedata.get("BulletLot"));
-        this.PowderLot = (chargedata.get("PowderLot"));
-        this.CaseMfg = (chargedata.get("CaseMfg"));
-        this.MuzzleVel_meas = (chargedata.get("MuzzleVel_meas"));
-        this.MVel_meas_std = (chargedata.get("MVel_meas_std"));
-        this.MVel_meas_unit =(chargedata.get("MVel_meas_unit"));
-        this.Press_meas = (chargedata.get("Press_meas"));
-        this.Press_meas_std = (chargedata.get("Press_meas_std"));
-        this.Press_meas_unit = (chargedata.get("Press_meas_unit"));
+        this.primerLot = (chargedata.get("PrimerLot"));
+        this.bulletLot = (chargedata.get("BulletLot"));
+        this.powderLot = (chargedata.get("PowderLot"));
+        this.caseMfg = (chargedata.get("CaseMfg"));
+        this.muzzleVel_meas = (chargedata.get("MuzzleVel_meas"));
+        this.mVel_meas_std = (chargedata.get("MVel_meas_std"));
+        this.mVel_meas_unit =(chargedata.get("MVel_meas_unit"));
+        this.press_meas = (chargedata.get("Press_meas"));
+        this.press_meas_std = (chargedata.get("Press_meas_std"));
+        this.press_meas_unit = (chargedata.get("Press_meas_unit"));
     }
 
     @Override
@@ -107,16 +107,16 @@ public class QLDatFileChargeData {
                 .append("bulkdn", bulkdn)
                 .append("powtmp", powtmp)
                 .append("primer", primer)
-                .append("PrimerLot", PrimerLot)
-                .append("BulletLot", BulletLot)
-                .append("PowderLot", PowderLot)
-                .append("CaseMfg", CaseMfg)
-                .append("MuzzleVel_meas", MuzzleVel_meas)
-                .append("MVel_meas_std", MVel_meas_std)
-                .append("MVel_meas_unit", MVel_meas_unit)
-                .append("Press_meas", Press_meas)
-                .append("Press_meas_std", Press_meas_std)
-                .append("Press_meas_unit", Press_meas_unit)
+                .append("PrimerLot", primerLot)
+                .append("BulletLot", bulletLot)
+                .append("PowderLot", powderLot)
+                .append("CaseMfg", caseMfg)
+                .append("MuzzleVel_meas", muzzleVel_meas)
+                .append("MVel_meas_std", mVel_meas_std)
+                .append("MVel_meas_unit", mVel_meas_unit)
+                .append("Press_meas", press_meas)
+                .append("Press_meas_std", press_meas_std)
+                .append("Press_meas_unit", press_meas_unit)
                 .toString();
     }
 }

@@ -3,7 +3,6 @@ package sk.digitalh.grt.toolkit.dto.ql;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 import org.ini4j.Ini;
-import org.ini4j.Profile;
 
 public class QLDatFileMetrics {
     /**
@@ -100,20 +99,20 @@ public class QLDatFileMetrics {
     private Double molydo; //= 0
     private Double l1_in; //= 0
     private Double l2_in; //= 0
-    private Double Ri_in; //= 0
-    private Double R1_in; //= 0
-    private Double P1_in; //= 0
-    private Double P2_in; //= 0
-    private Double H1_in; //= 0
-    private Double H2_in; //= 0
-    private Double Shape; //= 0
+    private Double ri_in; //= 0
+    private Double r1_in; //= 0
+    private Double p1_in; //= 0
+    private Double p2_in; //= 0
+    private Double h1_in; //= 0
+    private Double h2_in; //= 0
+    private Double shape; //= 0
     private Double caswht; //= 0
-    private Double ZD_in; //= 0
-    private Double FD_in; //= 0
-    private Double FB_in; //= 0
-    private Double ZZ_no; //= 0
-    private Double ZB_in; //= 0
-    private Double Polyg; //= 0
+    private Double zD_in; //= 0
+    private Double fD_in; //= 0
+    private Double fB_in; //= 0
+    private Double zZ_no; //= 0
+    private Double zB_in; //= 0
+    private Double polyg; //= 0
 
     public QLDatFileMetrics() {
         super();
@@ -158,20 +157,20 @@ public class QLDatFileMetrics {
         this.molydo = Double.parseDouble(metrics.get("molydo"));
         this.l1_in = Double.parseDouble(metrics.get("l1_in"));
         this.l2_in = Double.parseDouble(metrics.get("l2_in"));
-        this.Ri_in = Double.parseDouble(metrics.get("Ri_in"));
-        this.R1_in = Double.parseDouble(metrics.get("R1_in"));
-        this.P1_in = Double.parseDouble(metrics.get("P1_in"));
-        this.P2_in = Double.parseDouble(metrics.get("P2_in"));
-        this.H1_in = Double.parseDouble(metrics.get("H1_in"));
-        this.H2_in = Double.parseDouble(metrics.get("H2_in"));
-        this.Shape = Double.parseDouble(metrics.get("Shape"));
+        this.ri_in = Double.parseDouble(metrics.get("Ri_in"));
+        this.r1_in = Double.parseDouble(metrics.get("R1_in"));
+        this.p1_in = Double.parseDouble(metrics.get("P1_in"));
+        this.p2_in = Double.parseDouble(metrics.get("P2_in"));
+        this.h1_in = Double.parseDouble(metrics.get("H1_in"));
+        this.h2_in = Double.parseDouble(metrics.get("H2_in"));
+        this.shape = Double.parseDouble(metrics.get("Shape"));
         this.caswht = Double.parseDouble(metrics.get("caswht"));
-        this.ZD_in = Double.parseDouble(metrics.get("ZD_in"));
-        this.FD_in = Double.parseDouble(metrics.get("FD_in"));
-        this.FB_in = Double.parseDouble(metrics.get("FB_in"));
-        this.ZZ_no = Double.parseDouble(metrics.get("ZZ_no"));
-        this.ZB_in = Double.parseDouble(metrics.get("ZB_in"));
-        this.Polyg = Double.parseDouble(metrics.get("Polyg"));
+        this.zD_in = Double.parseDouble(metrics.get("ZD_in"));
+        this.fD_in = Double.parseDouble(metrics.get("FD_in"));
+        this.fB_in = Double.parseDouble(metrics.get("FB_in"));
+        this.zZ_no = Double.parseDouble(metrics.get("ZZ_no"));
+        this.zB_in = Double.parseDouble(metrics.get("ZB_in"));
+        this.polyg = Double.parseDouble(metrics.get("Polyg"));
     }
 
 
@@ -216,20 +215,20 @@ public class QLDatFileMetrics {
                 .append("molydo", molydo)
                 .append("l1_in", l1_in)
                 .append("l2_in", l2_in)
-                .append("Ri_in", Ri_in)
-                .append("R1_in", R1_in)
-                .append("P1_in", P1_in)
-                .append("P2_in", P2_in)
-                .append("H1_in", H1_in)
-                .append("H2_in", H2_in)
-                .append("Shape", Shape)
+                .append("Ri_in", ri_in)
+                .append("R1_in", r1_in)
+                .append("P1_in", p1_in)
+                .append("P2_in", p2_in)
+                .append("H1_in", h1_in)
+                .append("H2_in", h2_in)
+                .append("Shape", shape)
                 .append("caswht", caswht)
-                .append("ZD_in", ZD_in)
-                .append("FD_in", FD_in)
-                .append("FB_in", FB_in)
-                .append("ZZ_no", ZZ_no)
-                .append("ZB_in", ZB_in)
-                .append("Polyg", Polyg)
+                .append("ZD_in", zD_in)
+                .append("FD_in", fD_in)
+                .append("FB_in", fB_in)
+                .append("ZZ_no", zZ_no)
+                .append("ZB_in", zB_in)
+                .append("Polyg", polyg)
                 .toString();
     }
 }
