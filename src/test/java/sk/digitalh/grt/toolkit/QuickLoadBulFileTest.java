@@ -1,22 +1,21 @@
 package sk.digitalh.grt.toolkit;
 
+import org.apache.commons.csv.CSVRecord;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.ini4j.Ini;
 import org.junit.jupiter.api.Test;
-import sk.digitalh.grt.toolkit.dto.ql.QLDatFile;
+import sk.digitalh.grt.toolkit.dto.ql.QLBulFile;
 
-import java.io.File;
-import java.io.IOException;
+import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class QuickLoadTest {
+public class QuickLoadBulFileTest {
 
-    private static final Logger LOGGER = LogManager.getLogger(QuickLoadTest.class.getName());
+    private static final Logger LOGGER = LogManager.getLogger(QuickLoadBulFileTest.class.getName());
 
 
     // http://ini4j.sourceforge.net/tutorial/IniTutorial.java.html
@@ -26,9 +25,9 @@ public class QuickLoadTest {
         List<File> filesInFolder = null;
 
         try {
-            filesInFolder = Files.walk(Paths.get("target/test-classes/"))
+            filesInFolder = Files.walk(Paths.get("target/test-classes/quickload/bul/"))
                     .filter(Files::isRegularFile)
-                    .filter(p -> p.getFileName().toString().endsWith(".dat"))
+                    .filter(p -> p.getFileName().toString().endsWith(".bul"))
                     .map(Path::toFile)
                     .collect(Collectors.toList());
         } catch (IOException e) {
@@ -38,17 +37,20 @@ public class QuickLoadTest {
 
         for (File file : filesInFolder) {
             LOGGER.debug(file.getName());
-            Ini quickloadAmmoFile = new Ini();
+            Iterable<CSVRecord> records = null;
             try {
-                quickloadAmmoFile.load(file);
+                records = QLBulFile.CSV_FORMAT
+                        .parse(new FileReader(file));
 
-                QLDatFile qlDatFile = new QLDatFile(quickloadAmmoFile);
-                LOGGER.debug(qlDatFile);
+                for (CSVRecord record : records) {
+                    QLBulFile bulFile = new QLBulFile(file.getName(), record);
+                    LOGGER.debug(bulFile);
+                }
 
-            } catch (IOException ioEx) {
-                LOGGER.error(ioEx);
-                throw new RuntimeException(ioEx);
+            } catch (IOException e) {
+                throw new RuntimeException(e);
             }
+
         }
     }
 }

@@ -29,11 +29,18 @@
             <version>2.13.3</version>
         </dependency>
 
-        <!-- Quickload file storage uses common *.ini format-->
+        <!-- Quickload *.dat file storage uses common *.ini format-->
         <dependency>
             <groupId>org.ini4j</groupId>
             <artifactId>ini4j</artifactId>
             <version>0.5.4</version>
+        </dependency>
+
+        <!-- Quickload *.bul file storage uses common CSV format-->
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-csv</artifactId>
+            <version>1.9.0</version>
         </dependency>
 
         <!-- TEST -->
