@@ -69,7 +69,7 @@ public class GRTCaliberTest {
         List<File> filesInFolder = null;
 
         try {
-            filesInFolder = Files.walk(Paths.get("target/test-classes/"))
+            filesInFolder = Files.walk(Paths.get("target/test-classes/grt/caliber/"))
                     .filter(Files::isRegularFile)
                     .filter(p -> p.getFileName().toString().endsWith(".caliber"))
                     .map(Path::toFile)

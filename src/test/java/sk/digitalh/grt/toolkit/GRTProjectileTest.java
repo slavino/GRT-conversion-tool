@@ -68,7 +68,7 @@ public class GRTProjectileTest {
         List<File> filesInFolder = null;
 
         try {
-            filesInFolder = Files.walk(Paths.get("target/test-classes/"))
+            filesInFolder = Files.walk(Paths.get("target/test-classes/grt/projectile/"))
                     .filter(Files::isRegularFile)
                     .filter(p -> p.getFileName().toString().endsWith(".projectile"))
                     .map(Path::toFile)

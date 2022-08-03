@@ -67,7 +67,7 @@ class GRTLoadTest {
         List<File> filesInFolder = null;
 
         try {
-            filesInFolder = Files.walk(Paths.get("target/test-classes/"))
+            filesInFolder = Files.walk(Paths.get("target/test-classes/grt/grtload/"))
                     .filter(Files::isRegularFile)
                     .filter(p -> p.getFileName().toString().endsWith(".grtload"))
                     .map(Path::toFile)
