@@ -1,13 +1,16 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public abstract class GRTAbstractInput {
+public class GRTLoadGunLeakageGroupLeakageVar {
 
     @JacksonXmlProperty(localName = "name", isAttribute = true)
     private String name;
+
+    @JacksonXmlProperty(localName = "value", isAttribute = true)
+    private String value;
 
     @JacksonXmlProperty(localName = "unit", isAttribute = true)
     private String unit;
@@ -18,6 +21,7 @@ public abstract class GRTAbstractInput {
     @JacksonXmlProperty(localName = "descr", isAttribute = true)
     private String descr;
 
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
@@ -25,6 +29,7 @@ public abstract class GRTAbstractInput {
                 .append("unit", unit)
                 .append("type", type)
                 .append("descr", descr)
+                .append("value", value)
                 .toString();
     }
 

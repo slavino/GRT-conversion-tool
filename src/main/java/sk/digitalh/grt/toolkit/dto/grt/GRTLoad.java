@@ -1,6 +1,5 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import org.apache.commons.lang3.builder.ToStringStyle;

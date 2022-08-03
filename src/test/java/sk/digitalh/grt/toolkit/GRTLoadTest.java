@@ -7,9 +7,8 @@ import com.fasterxml.jackson.databind.SerializationFeature;
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-import sk.digitalh.grt.toolkit.dto.GRTLoad;
+import sk.digitalh.grt.toolkit.dto.grt.GRTLoad;
 
 import java.io.*;
 import java.nio.file.Files;

@@ -1,4 +1,4 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;

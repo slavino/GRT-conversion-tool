@@ -1,23 +1,21 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
-import sk.digitalh.grt.toolkit.GRTLoadCaliberFileVar;
 
 import java.util.List;
 
-public class GRTLoadGunLeakageGroupLeakage {
+public class GRTLoadGunLeakageGroup {
 
     @JacksonXmlElementWrapper(useWrapping = false)
-    @JacksonXmlProperty(localName = "var")
-    List<GRTLoadGunLeakageGroupLeakageVar> grtLoadGunLeakageGroupLeakageVars;
+    @JacksonXmlProperty(localName = "leakage")
+    private List<GRTLoadGunLeakageGroupLeakage> grtLoadGunLeakageGroupLeakages;
 
     @Override
     public String toString() {
         return new ToStringBuilder(this)
-                .append("grtLoadGunLeakageGroupLeakageVars", grtLoadGunLeakageGroupLeakageVars)
+                .append("grtLoadGunLeakageGroups", grtLoadGunLeakageGroupLeakages)
                 .toString();
     }
-
 }

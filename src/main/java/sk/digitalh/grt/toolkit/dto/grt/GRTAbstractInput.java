@@ -1,29 +1,31 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-public class GRTLoadAppendixMeasurementChargeShot {
-
-    /* <shot name="" velocity="844.60080000000607" pressure="0" />
-     */
+public abstract class GRTAbstractInput {
 
     @JacksonXmlProperty(localName = "name", isAttribute = true)
     private String name;
 
-    @JacksonXmlProperty(localName = "velocity", isAttribute = true)
-    private Double velocity;
+    @JacksonXmlProperty(localName = "unit", isAttribute = true)
+    private String unit;
 
-    @JacksonXmlProperty(localName = "pressure", isAttribute = true)
-    private Double pressure;
+    @JacksonXmlProperty(localName = "type", isAttribute = true)
+    private String type;
+
+    @JacksonXmlProperty(localName = "descr", isAttribute = true)
+    private String descr;
 
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
                 .append("name", name)
-                .append("velocity", velocity)
-                .append("pressure", pressure)
+                .append("unit", unit)
+                .append("type", type)
+                .append("descr", descr)
                 .toString();
     }
+
 }

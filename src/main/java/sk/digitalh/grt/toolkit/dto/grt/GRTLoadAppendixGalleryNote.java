@@ -1,4 +1,4 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 public class GRTLoadAppendixGalleryNote extends GRTAbstractNote {
 }

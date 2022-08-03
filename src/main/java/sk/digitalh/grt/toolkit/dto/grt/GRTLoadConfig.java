@@ -1,16 +1,16 @@
-package sk.digitalh.grt.toolkit.dto;
+package sk.digitalh.grt.toolkit.dto.grt;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
-import java.net.URLDecoder;
-import java.nio.charset.Charset;
-
-public class GRTLoadGunInput extends GRTAbstractInput {
+public class GRTLoadConfig {
 
     @JacksonXmlProperty(localName = "name", isAttribute = true)
     private String name;
+
+    @JacksonXmlProperty(localName = "value", isAttribute = true)
+    private String value;
 
     @JacksonXmlProperty(localName = "unit", isAttribute = true)
     private String unit;
@@ -21,21 +21,14 @@ public class GRTLoadGunInput extends GRTAbstractInput {
     @JacksonXmlProperty(localName = "descr", isAttribute = true)
     private String descr;
 
-    @JacksonXmlProperty(localName = "value", isAttribute = true)
-    private String value;
-
-    public String getURLDecodedValue() {
-        return URLDecoder.decode(value, Charset.forName("UTF-8"));
-    }
-
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
                 .append("name", name)
+                .append("value", value)
                 .append("unit", unit)
                 .append("type", type)
                 .append("descr", descr)
-                .append("value", getURLDecodedValue())
                 .toString();
     }
 }
