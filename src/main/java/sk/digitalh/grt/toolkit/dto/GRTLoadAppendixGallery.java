@@ -7,6 +7,8 @@ import org.apache.commons.lang3.builder.ToStringStyle;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.List;
 
 public class GRTLoadAppendixGallery {
@@ -25,13 +27,6 @@ public class GRTLoadAppendixGallery {
     @JacksonXmlProperty(localName = "title", isAttribute = true)
     private String title;
 
-    //FIXME WTF?
-//    @JacksonXmlProperty(localName = "name", isAttribute = true)
-//    private String name;
-    //FIXME WTF?
-//    @JacksonXmlProperty(localName = "type", isAttribute = true)
-//    private String type;
-
     @JacksonXmlElementWrapper(useWrapping = false)
     @JacksonXmlProperty(localName = "picture")
     private List<GRTLoadAppendixGalleryPicture> grtLoadAppendixGalleryPictures;
@@ -45,13 +40,17 @@ public class GRTLoadAppendixGallery {
         LOGGER.debug("### Appendix Gallery");
     }
 
+    public String getURLDecodedTitle() {
+        return URLDecoder.decode(title, Charset.forName("UTF-8"));
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
                 .append("index", index)
                 .append("hasfocus", hasfocus)
                 .append("showinreport", showinreport)
-                .append("title", title)
+                .append("title", getURLDecodedTitle())
                 .append("grtLoadAppendixGalleryPictures", grtLoadAppendixGalleryPictures)
                 .append("grtLoadAppendixNotes", grtLoadAppendixNotes)
                 .toString();

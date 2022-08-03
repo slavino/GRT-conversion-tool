@@ -89,6 +89,7 @@ class GRTLoadTest {
                 throw new RuntimeException(e);
             }
 
+            // *.grtload files
             GRTLoad grtLoad = null;
 
             try {

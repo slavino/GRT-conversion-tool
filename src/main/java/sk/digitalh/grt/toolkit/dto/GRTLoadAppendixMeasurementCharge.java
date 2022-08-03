@@ -5,6 +5,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.List;
 
 public class GRTLoadAppendixMeasurementCharge {
@@ -56,14 +58,23 @@ public class GRTLoadAppendixMeasurementCharge {
     @JacksonXmlProperty(localName = "shot")
     private List<GRTLoadAppendixMeasurementChargeShot> grtLoadAppendixMeasurementChargeShots;
 
+    public String getURLDecodedName() {
+        return URLDecoder.decode(name, Charset.forName("UTF-8"));
+    }
+
+    public String getURLDecodedNote() {
+        return URLDecoder.decode(note, Charset.forName("UTF-8"));
+    }
+
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
-                .append("name", name)
+                .append("name", getURLDecodedName())
                 .append("showinreport", showinreport)
                 .append("expanded", expanded)
                 .append("expandedstats", expandedstats)
-                .append("note", note)
+                .append("note", getURLDecodedNote())
                 .append("value", value)
                 .append("menu", menu)
                 .append("menuvalue", menuvalue)

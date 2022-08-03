@@ -5,6 +5,9 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
+
 public class GRTLoadInteriorBallisticInput {
 
     @JacksonXmlProperty(localName = "title")
@@ -32,10 +35,14 @@ public class GRTLoadInteriorBallisticInput {
     @JacksonXmlProperty(localName = "appendix")
     private GRTLoadAppendix grtLoadAppendix;
 
+    public String getURLDecodedTitle() {
+        return URLDecoder.decode(title, Charset.forName("UTF-8"));
+    }
+
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
-                .append("title", title)
+                .append("title", getURLDecodedTitle())
                 .append("grtLoadConfig", grtLoadConfig)
                 .append("grtLoadCaliber", grtLoadCaliber)
                 .append("grtLoadCaliberFile", grtLoadCaliberFile)

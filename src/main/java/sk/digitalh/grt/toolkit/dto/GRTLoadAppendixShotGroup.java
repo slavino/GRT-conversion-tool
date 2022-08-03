@@ -5,6 +5,8 @@ import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
 
+import java.net.URLDecoder;
+import java.nio.charset.Charset;
 import java.util.List;
 
 public class GRTLoadAppendixShotGroup {
@@ -72,12 +74,15 @@ public class GRTLoadAppendixShotGroup {
     @JacksonXmlProperty(localName = "group", isAttribute = true)
     private List<GRTLoadAppendixShotGroupGroup> grtLoadAppendixShotGroupGroups;
 
+    public String getURLDecodedTitle() {
+        return URLDecoder.decode(title, Charset.forName("UTF-8"));
+    }
     @Override
     public String toString() {
         return new ToStringBuilder(this, ToStringStyle.JSON_STYLE)
                 .append("index", index)
                 .append("hasfocus", hasfocus)
-                .append("title", title)
+                .append("title", getURLDecodedTitle())
                 .append("zoom", zoom)
                 .append("scrollPositionX", scrollPositionX)
                 .append("scrollPositionY", scrollPositionY)
