@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<GordonsReloadingTool>
+  <projectilefile>
+    <var name="mname" value="Sellier-Bellot" />
+    <var name="pname" value="SPCE%202945" />
+    <var name="lotid" value="2021" />
+    <var name="caliber" value=".323" />
+    <var name="gdia" value="8.20" />
+    <var name="glen" value="30.20" />
+    <var name="gmass" value="196.0" />
+    <var name="gpressure" value="250" />
+    <var name="gfriction" value="0" />
+    <var name="gtailDiaA" value="0.00" />
+    <var name="gtailDiaB" value="0.00" />
+    <var name="gtailh" value="0.00" />
+    <var name="gtailType" value="0" />
+    <var name="gdepthmax" value="0.00" />
+    <var name="g1bc" value="0.328" />
+    <var name="g7bc" value="0.165" />
+    <var name="gUBCS" value="H0S4F5S4N4" />
+    <var name="cdate" value="2021-12-13" />
+    <var name="cby" value="Slavomir%20Hustaty" />
+    <var name="mdate" value="" />
+    <var name="mby" value="" />
+    <var name="type" value="" />
+    <var name="mode" value="userfile" />
+    <var name="status" value="" />
+    <var name="origin" value="" />
+    <var name="descr" value="https%3A%2F%2Fwww.sellier-bellot.cz%2Fen%2Fproducts%2Frifle-ammunition%2Frifle-ammunition-spce%2Fdetail%2F127%2F" />
+    <var name="imageUuid" value="" />
+  </projectilefile>
+</GordonsReloadingTool>

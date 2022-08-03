@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<GordonsReloadingTool>
+  <projectilefile>
+    <var name="mname" value="Nosler" />
+    <var name="pname" value="E-Tip%2059265" />
+    <var name="lotid" value="" />
+    <var name="caliber" value=".323" />
+    <var name="gdia" value="8.20" />
+    <var name="glen" value="34.67" />
+    <var name="gmass" value="180.0" />
+    <var name="gpressure" value="250" />
+    <var name="gfriction" value="0" />
+    <var name="gtailDiaA" value="8.20" />
+    <var name="gtailDiaB" value="7.30" />
+    <var name="gtailh" value="3.10" />
+    <var name="gtailType" value="2" />
+    <var name="gdepthmax" value="0.00" />
+    <var name="g1bc" value="0.427" />
+    <var name="g7bc" value="0.000" />
+    <var name="gUBCS" value="H2B1B2C1N2" />
+    <var name="cdate" value="2021-11-03" />
+    <var name="cby" value="SlavomirHustaty" />
+    <var name="mdate" value="" />
+    <var name="mby" value="" />
+    <var name="type" value="" />
+    <var name="mode" value="userfile" />
+    <var name="status" value="" />
+    <var name="origin" value="" />
+    <var name="descr" value="Fix%20of%20BC%20G1%20based%20on%20Nosler%27s%20page%0Dhttps%3A%2F%2Fwww.nosler.com%2F8mm-180gr-expansion-tip-lead-free-50ct.html" />
+    <var name="imageUuid" value="" />
+  </projectilefile>
+</GordonsReloadingTool>

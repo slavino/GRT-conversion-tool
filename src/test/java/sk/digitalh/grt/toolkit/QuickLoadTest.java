@@ -3,7 +3,6 @@ package sk.digitalh.grt.toolkit;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.ini4j.Ini;
-import org.ini4j.Profile;
 import org.junit.jupiter.api.Test;
 import sk.digitalh.grt.toolkit.dto.ql.QLDatFile;
 
