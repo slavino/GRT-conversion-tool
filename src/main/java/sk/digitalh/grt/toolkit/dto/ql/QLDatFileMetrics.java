@@ -2,9 +2,14 @@ package sk.digitalh.grt.toolkit.dto.ql;
 
 import org.apache.commons.lang3.builder.ToStringBuilder;
 import org.apache.commons.lang3.builder.ToStringStyle;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.ini4j.Ini;
 
 public class QLDatFileMetrics {
+
+    private static final Logger LOGGER = LogManager.getLogger(QLDatFileMetrics.class.getName());
+
     /**
      * [metrics]
      * pattyp=9.3 x 62
@@ -74,7 +79,10 @@ public class QLDatFileMetrics {
     private Double brennr; //= 69.1556284735344
     private Double gesweg; //= 516.45
     private Double maxzul; //= 390
+
+    //FIXME adept for enum
     private String pmetho; //=Piezo CIP
+                            // - Piezo SAAMI
     private String bultyp; //=.366, 170, AERO ECO - smax:10,4
     private Double bulgew; //= 170.002859616648
     private Double bullen; //= .920866141732284
@@ -114,65 +122,76 @@ public class QLDatFileMetrics {
     private Double zB_in; //= 0
     private Double polyg; //= 0
 
+    private static Double assignValue(String recordValue) {
+        if (recordValue == null || recordValue.isEmpty()) {
+            return null;
+        } else {
+            try {
+                return Double.parseDouble(recordValue.replace(",","."));
+            } catch (NumberFormatException nfEx) {
+                LOGGER.error(nfEx);
+                return null;
+            }
+        }
+    }
     public QLDatFileMetrics() {
         super();
     }
 
     public QLDatFileMetrics(Ini.Section metrics) {
         this.pattyp = metrics.get("pattyp");
-        this.laflen = Double.parseDouble(metrics.get("laflen"));
-        this.patlan = Double.parseDouble(metrics.get("patlan"));
-        this.sdepth = Double.parseDouble(metrics.get("sdepth"));
-        this.hullen = Double.parseDouble(metrics.get("hullen"));
-        this.kalzug = Double.parseDouble(metrics.get("kalzug"));
-        this.sebert = Double.parseDouble(metrics.get("sebert"));
-        this.volful = Double.parseDouble(metrics.get("volful"));
-        this.wirkqu = Double.parseDouble(metrics.get("wirkqu"));
-        this.wirktr = Double.parseDouble(metrics.get("wirktr"));
-        this.brennr = Double.parseDouble(metrics.get("brennr"));
-        this.gesweg = Double.parseDouble(metrics.get("gesweg"));
-        this.maxzul = Double.parseDouble(metrics.get("maxzul"));
+        this.laflen = assignValue(metrics.get("laflen"));
+        this.patlan = assignValue(metrics.get("patlan"));
+        this.sdepth = assignValue(metrics.get("sdepth"));
+        this.hullen = assignValue(metrics.get("hullen"));
+        this.kalzug = assignValue(metrics.get("kalzug"));
+        this.sebert = assignValue(metrics.get("sebert"));
+        this.volful = assignValue(metrics.get("volful"));
+        this.wirkqu = assignValue(metrics.get("wirkqu"));
+        this.wirktr = assignValue(metrics.get("wirktr"));
+        this.brennr = assignValue(metrics.get("brennr"));
+        this.gesweg = assignValue(metrics.get("gesweg"));
+        this.maxzul = assignValue(metrics.get("maxzul"));
         this.pmetho = metrics.get("pmetho");
         this.bultyp = metrics.get("bultyp");
-        this.bulgew = Double.parseDouble(metrics.get("bulgew"));
-        this.bullen = Double.parseDouble(metrics.get("bullen"));
-        this.conlen = Double.parseDouble(metrics.get("conlen"));
-        this.condia = Double.parseDouble(metrics.get("condia"));
-        this.condid = Double.parseDouble(metrics.get("condid"));
-        this.ausinn = Double.parseDouble(metrics.get("ausinn"));
-        this.buldia = Double.parseDouble(metrics.get("buldia"));
-        this.c1icao = Double.parseDouble(metrics.get("c1icao"));
-        this.mulbc1 = Double.parseDouble(metrics.get("mulbc1"));
-        this.trvel1 = Double.parseDouble(metrics.get("trvel1"));
-        this.mulbc2 = Double.parseDouble(metrics.get("mulbc2"));
-        this.trvel2 = Double.parseDouble(metrics.get("trvel2"));
-        this.mulbc3 = Double.parseDouble(metrics.get("mulbc3"));
-        this.trvel3 = Double.parseDouble(metrics.get("trvel3"));
-        this.mulbc4 = Double.parseDouble(metrics.get("mulbc4"));
-        this.trvel4 = Double.parseDouble(metrics.get("trvel4"));
-        this.mulbc5 = Double.parseDouble(metrics.get("mulbc5"));
-        this.friyes = Double.parseDouble(metrics.get("friyes"));
-        this.fripas = Double.parseDouble(metrics.get("fripas"));
-        this.molyco = Double.parseDouble(metrics.get("molyco"));
-        this.molydo = Double.parseDouble(metrics.get("molydo"));
-        this.l1_in = Double.parseDouble(metrics.get("l1_in"));
-        this.l2_in = Double.parseDouble(metrics.get("l2_in"));
-        this.ri_in = Double.parseDouble(metrics.get("Ri_in"));
-        this.r1_in = Double.parseDouble(metrics.get("R1_in"));
-        this.p1_in = Double.parseDouble(metrics.get("P1_in"));
-        this.p2_in = Double.parseDouble(metrics.get("P2_in"));
-        this.h1_in = Double.parseDouble(metrics.get("H1_in"));
-        this.h2_in = Double.parseDouble(metrics.get("H2_in"));
-        this.shape = Double.parseDouble(metrics.get("Shape"));
-        this.caswht = Double.parseDouble(metrics.get("caswht"));
-        this.zD_in = Double.parseDouble(metrics.get("ZD_in"));
-        this.fD_in = Double.parseDouble(metrics.get("FD_in"));
-        this.fB_in = Double.parseDouble(metrics.get("FB_in"));
-        this.zZ_no = Double.parseDouble(metrics.get("ZZ_no"));
-        this.zB_in = Double.parseDouble(metrics.get("ZB_in"));
-        this.polyg = Double.parseDouble(metrics.get("Polyg"));
+        this.bulgew = assignValue(metrics.get("bulgew"));
+        this.bullen = assignValue(metrics.get("bullen"));
+        this.conlen = assignValue(metrics.get("conlen"));
+        this.condia = assignValue(metrics.get("condia"));
+        this.condid = assignValue(metrics.get("condid"));
+        this.ausinn = assignValue(metrics.get("ausinn"));
+        this.buldia = assignValue(metrics.get("buldia"));
+        this.c1icao = assignValue(metrics.get("c1icao"));
+        this.mulbc1 = assignValue(metrics.get("mulbc1"));
+        this.trvel1 = assignValue(metrics.get("trvel1"));
+        this.mulbc2 = assignValue(metrics.get("mulbc2"));
+        this.trvel2 = assignValue(metrics.get("trvel2"));
+        this.mulbc3 = assignValue(metrics.get("mulbc3"));
+        this.trvel3 = assignValue(metrics.get("trvel3"));
+        this.mulbc4 = assignValue(metrics.get("mulbc4"));
+        this.trvel4 = assignValue(metrics.get("trvel4"));
+        this.mulbc5 = assignValue(metrics.get("mulbc5"));
+        this.friyes = assignValue(metrics.get("friyes"));
+        this.fripas = assignValue(metrics.get("fripas"));
+        this.molyco = assignValue(metrics.get("molyco"));
+        this.molydo = assignValue(metrics.get("molydo"));
+        this.l1_in = assignValue(metrics.get("l1_in"));
+        this.l2_in = assignValue(metrics.get("l2_in"));
+        this.ri_in = assignValue(metrics.get("Ri_in"));
+        this.r1_in = assignValue(metrics.get("R1_in"));
+        this.p1_in = assignValue(metrics.get("P1_in"));
+        this.p2_in = assignValue(metrics.get("P2_in"));
+        this.h1_in = assignValue(metrics.get("H1_in"));
+        this.h2_in = assignValue(metrics.get("H2_in"));
+        this.shape = assignValue(metrics.get("Shape"));
+        this.caswht = assignValue(metrics.get("caswht"));
+        this.zD_in = assignValue(metrics.get("ZD_in"));
+        this.fD_in = assignValue(metrics.get("FD_in"));
+        this.fB_in = assignValue(metrics.get("FB_in"));
+        this.zZ_no = assignValue(metrics.get("ZZ_no"));
+        this.zB_in = assignValue(metrics.get("ZB_in"));
+        this.polyg = assignValue(metrics.get("Polyg"));
     }
-
 
     @Override
     public String toString() {
